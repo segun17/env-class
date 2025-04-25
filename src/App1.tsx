@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 
 function App() {
     const apikey= import.meta.env.VITE_backendApi
@@ -9,7 +9,7 @@ function App() {
         axios.get(`${import.meta.env.BASE_URL}${apikey}`).then((res)=>{
 
         }).catch((err)=>{
-
+       console.log(err)
         })
     })
   return (
