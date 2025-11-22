@@ -14,9 +14,10 @@ const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    axios.get<Country[]>('https://restcountries.com/v3.1/all')
-      .then(res => setCountries(res.data))
-      .catch(err => console.error('Error fetching countries:', err));
+   axios.get<Country[]>('https://restcountries.com/v3.1/all?fields=name,capital,region,flags,cca3')
+  .then(res => setCountries(res.data))
+  .catch(err => console.error('Error fetching countries:', err));
+
   }, []);
 
   const filteredCountries = countries.filter((country) =>
